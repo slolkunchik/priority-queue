@@ -55,24 +55,24 @@ class Node {
 				if(parentNode.left !== null) {
 					parentNode.left.parent = this;
 				}
-				this.right = parentNode;
 				this.left= parentNode.left;
+				this.right = parentNode;
 			}
 			if(this === parentNode.left) {
 				if(parentNode.right !== null) {
 					parentNode.right.parent = this;
 				}
-				this.left = parentNode;
 				this.right = parentNode.right;
+				this.left = parentNode;
 			}
 			if(leftChild  !== null) {//children
-				parentNode.left = leftChild;
 				leftChild.parent = parentNode;
 			}
 			if(rightChild !== null) {
-				parentNode.right = rightChild;
 				rightChild.parent = parentNode;
 			}
+			parentNode.left = leftChild;
+			parentNode.right = rightChild;
 		}
 	}
 }
